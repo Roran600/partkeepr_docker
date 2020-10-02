@@ -1,4 +1,4 @@
-## bluelotussoftware/partkeepr docker image repository
+## roran60/partkeepr docker image repository
 
 This repository is based on [`mhubig/partkeepr`][0]  [`bluelotussoftware/partkeepr`][1]. The [`roran60/partkeepr`][4]
 [partkeepr][2] docker has been updated to use recent releases. It includes additional functionality:
