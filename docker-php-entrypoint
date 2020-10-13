@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-PARAMETERS_FILE='/var/www/html/app/config/mkparameters.php'
+PARAMETERS_FILE='/var/www/html/app/config/parameters.php'
 
 mkparameters > $PARAMETERS_FILE
 chown -R www-data:www-data /var/www/html/app
