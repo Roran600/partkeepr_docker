@@ -37,7 +37,9 @@ COPY php.ini /usr/local/etc/php/php.ini
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 COPY docker-php-entrypoint mkparameters parameters.template /usr/local/bin/
 
+RUN chmod 755 docker-php-entrypoint mkparameters parameters.template
+
 VOLUME ["/var/www/html/data", "/var/www/html/web"]
 
-ENTRYPOINT ["docker-php-entrypoint"]
+ENTRYPOINT ["/docker-php-entrypoint"]
 CMD ["apache2-foreground"]
