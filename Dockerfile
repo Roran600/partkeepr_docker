@@ -15,6 +15,7 @@ RUN set -ex \
         libpng-dev \
         libldap2-dev \
         cron \
+		nano \
     --no-install-recommends && rm -r /var/lib/apt/lists/* \
     \
     && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
