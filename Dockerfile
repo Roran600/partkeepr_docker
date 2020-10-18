@@ -14,7 +14,7 @@ RUN apt-get install -y ntp
 RUN apt-get install -y libarchive-tools
 RUN apt-get install -y libcurl4-openssl-dev 
 RUN apt-get install -y libfreetype6-dev 
-RUN apt-get install -y libjpeg62-turbo-dev 
+RUN apt-get install -y libjpeg62-dev
 RUN apt-get install -y cron 
 RUN apt-get install -y nano 
 RUN apt-get install -y libicu-dev 
