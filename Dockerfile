@@ -24,7 +24,6 @@ RUN apt-get install -y libldap2-dev
 RUN apt-get install -y composer
 RUN apt-get install -y software-properties-common 
 RUN apt-get install -y php7.2
-RUN apt-get install -y php7.2-dev 
 RUN apt-get install -y php7.2-mysql 
 RUN apt-get install -y libapache2-mod-php 
 RUN apt-get install -y php7.2-curl 
