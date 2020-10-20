@@ -43,7 +43,7 @@ RUN apt-get install -y php-xml
 
 RUN rm -r /var/lib/apt/lists/* 
 
-RUN ldap --with-libdir=lib/x86_64-linux-gnu/ 
+# RUN ldap --with-libdir=lib/x86_64-linux-gnu/ 
 RUN gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ 
 
 RUN pecl install apcu 
