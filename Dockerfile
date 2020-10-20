@@ -27,19 +27,19 @@ RUN apt-get install -y php7.2
 RUN apt-get install -y php-dev
 RUN apt-get install -y php-mysql 
 RUN apt-get install -y libapache2-mod-php 
-RUN apt-get install -y php7.2-curl 
-RUN apt-get install -y php7.2-json 
-RUN apt-get install -y php7.2-common 
-RUN apt-get install -y php7.2-mbstring 
-RUN apt-get install -y php7.2-apcu 
-RUN apt-get install -y php7.2-apcu-bc 
-RUN apt-get install -y php7.2-curl 
-RUN apt-get install -y php7.2-gd 
-RUN apt-get install -y php7.2-intl  
-RUN apt-get install -y php7.2-ldap 
-RUN apt-get install -y php7.2-mysql 
-RUN apt-get install -y php7.2-dom 
-RUN apt-get install -y php7.2-xml
+RUN apt-get install -y php-curl 
+RUN apt-get install -y php-json 
+RUN apt-get install -y php-common 
+RUN apt-get install -y php-mbstring 
+RUN apt-get install -y php-apcu 
+RUN apt-get install -y php-apcu-bc 
+RUN apt-get install -y php-curl 
+RUN apt-get install -y php-gd 
+RUN apt-get install -y php-intl  
+RUN apt-get install -y php-ldap 
+RUN apt-get install -y php-mysql 
+RUN apt-get install -y php-dom 
+RUN apt-get install -y php-xml
 
 RUN rm -r /var/lib/apt/lists/* 
 
