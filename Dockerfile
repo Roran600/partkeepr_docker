@@ -19,7 +19,7 @@ RUN apt-get install -y cron
 RUN apt-get install -y nano 
 RUN apt-get install -y libicu-dev 
 RUN apt-get install -y libxml2-dev 
-RUN apt-get install -y libpng12-0
+RUN apt-get install -y libpng-dev
 RUN apt-get install -y libldap2-dev 
 RUN apt-get install -y php 
 RUN apt-get install -y php-dev 
