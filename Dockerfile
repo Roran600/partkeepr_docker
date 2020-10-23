@@ -47,7 +47,8 @@ RUN rm -r /var/lib/apt/lists/*
 # RUN gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ 
 
 RUN pecl install apcu 
-RUN docker-php-ext-enable apcu 
+RUN sudo bash -c "echo extension=apcu.so > /etc/php7.X-sp/conf.d/apcu.ini"
+RUN sudo service php7.X-fpm-sp restart
 
 RUN cd /var/www/html 
 # A Release was not created with a .tbz2 extension for 1.3.0 on Github.
