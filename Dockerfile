@@ -1,5 +1,9 @@
 FROM debian:buster
 
+MAINTAINER Roran60
+
+ENV VERSION 1.4.0
+
 RUN apt-get update && apt-get install -y \
     apache2     \
     apache2-doc \
@@ -19,7 +23,11 @@ RUN apt-get update && apt-get install -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 
-
+&& cd /var/www/html \
+    # A Release was not created with a .tbz2 extension for 1.3.0 on Github.
+    # && curl -sL https://github.com/partkeepr/PartKeepr/releases/download/${VERSION}/partkeepr-${VERSION}.tbz2 |bsdtar --strip-components=1 -xvf- \
+    && curl -sL https://downloads.partkeepr.org/partkeepr-{$VERSION}.tbz2 |bsdtar --strip-components=1 -xvf- \
+    && chown -R www-data:www-data /var/www/html \
 
 
 
