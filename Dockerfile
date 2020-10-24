@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
 	php-ldap    \ 
 	php-mysql   \
 	php-dom     \
-	php-xml     \
+	php-xml     \ 
+	nano        \
 	&& rm -rf /var/lib/apt/lists/*
 
 
