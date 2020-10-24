@@ -19,7 +19,8 @@ RUN apt-get update && apt-get install -y \
 	php-mysql   \
 	php-dom     \
 	php-xml     \ 
-	nano        \
+	nano        \ 
+	bsdtar      \
 	&& rm -rf /var/lib/apt/lists/*
 
 
