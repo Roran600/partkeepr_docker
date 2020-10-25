@@ -30,8 +30,8 @@ RUN cd /var/www/html \
     && curl -sL https://downloads.partkeepr.org/partkeepr-{$VERSION}.tbz2 |bsdtar --strip-components=1 -xvf- \
     && chown -R www-data:www-data /var/www/html \
     \
-    && a2enmod rewrite 
-    && a2enmod userdir
+    && a2enmod rewrite \
+    && a2enmod userdir \
 
 COPY php.ini /usr/local/etc/php/php.ini
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
