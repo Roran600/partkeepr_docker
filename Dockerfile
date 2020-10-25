@@ -31,7 +31,7 @@ RUN cd /var/www/html \
     && chown -R www-data:www-data /var/www/html \
     \
     && a2enmod rewrite \
-    && a2enmod userdir \1
+    # && a2enmod userdir \1
 
 COPY php.ini /etc/php/7.3/cli/php.ini
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
