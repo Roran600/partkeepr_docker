@@ -36,7 +36,7 @@ RUN cd /var/www/html \
 COPY php.ini /usr/local/etc/php/php.ini
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
 
-
+RUN service apache2 restart
 
 
 
