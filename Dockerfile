@@ -33,8 +33,8 @@ RUN cd /var/www/html \
     && a2enmod rewrite \
     && a2enmod userdir \
 
-COPY php.ini /etc/php/7.3/cli/php.ini
-COPY apache.conf /etc/apache2/sites-available/000-default.conf
+COPY php.ini /etc/php/7.3/cli/php.ini/
+COPY apache.conf /etc/apache2/sites-available/000-default.conf/
 
 RUN service apache2 restart
 
