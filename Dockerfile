@@ -41,13 +41,13 @@ RUN cd /var/www/html \
     && a2enmod rewrite \
     && a2enmod userdir \
 
-COPY php.ini /usr/local/etc/php/
-COPY 000-default.conf /etc/apache2/sites-available/
+ADD php.ini /usr/local/etc/php/
+ADD 000-default.conf /etc/apache2/sites-available/
 
 RUN service apache2 restart
 
 
-COPY ./entrypoint.sh /
+ADD ./entrypoint.sh /
 ENTRYPOINT /entrypoint.sh
 
 
