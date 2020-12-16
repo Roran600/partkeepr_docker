@@ -1,6 +1,7 @@
 FROM debian:buster
 
 MAINTAINER Roran60
+WORKDIR /var/www
 
 ENV VERSION 1.4.0
 
@@ -8,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     apache2     \
     apache2-doc \
     curl        \ 
+	cron        \ 
 	ntp         \
     php         \
 	php-apcu    \
@@ -23,6 +25,12 @@ RUN apt-get update && apt-get install -y \
 	bsdtar      \
 	&& rm -rf /var/lib/apt/lists/*
 
+# Create the log file
+RUN touch /var/log/schedule.log
+RUN chmod 0777 /var/log/schedule.log  
+
+# Add crontab file in the cron directory
+ADD scheduler /etc/cron.d/scheduler
 
 RUN cd /var/www/html \
     # A Release was not created with a .tbz2 extension for 1.3.0 on Github.
@@ -39,7 +47,8 @@ COPY 000-default.conf /etc/apache2/sites-available/
 RUN service apache2 restart
 
 
-
+COPY ./entrypoint.sh /
+ENTRYPOINT /entrypoint.sh
 
 
 

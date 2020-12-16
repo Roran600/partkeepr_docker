@@ -1,0 +1,1 @@
+0 0,6,12,18 * * * /usr/local/bin/php /var/www/html/app/console partkeepr:cron:run >> /var/log/schedule.log 2>&1'
