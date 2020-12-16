@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM php:7.1.9-apache
 
 MAINTAINER Roran60
 WORKDIR /var/www
