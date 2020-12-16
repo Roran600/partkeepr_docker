@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cron -f &
-docker-php-entrypoint php-fpm
+docker-php-entrypoint php-apache
