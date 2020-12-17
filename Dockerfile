@@ -42,7 +42,7 @@ RUN chmod 0777 /var/log/schedule.log
 ADD scheduler /etc/cron.d/scheduler
 
 COPY php.ini /usr/local/etc/php/php.ini
-COPY apache.conf /etc/apache2/sites-available/000-default.conf
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 VOLUME /var/www/html/data
 
