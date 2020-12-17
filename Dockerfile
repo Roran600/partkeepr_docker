@@ -46,7 +46,8 @@ COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 VOLUME /var/www/html/data
 
-ADD ./entrypoint.sh /
+ADD ./entrypoint.sh / 
+RUN chmod +x docker-entrypoint.sh
 ENTRYPOINT /entrypoint.sh
 
 
