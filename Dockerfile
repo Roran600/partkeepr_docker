@@ -46,9 +46,9 @@ COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 VOLUME /var/www/html/data
 
-COPY ./entrypoint.sh /entrypoint.sh 
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["./entrypoint.sh"]
+# Run the cron
+RUN crontab /etc/cron.d/scheduler
+CMD ["cron", "-f"]
 
 
 
