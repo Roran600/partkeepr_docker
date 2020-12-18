@@ -3,7 +3,7 @@ FROM php:7.1.9-apache
 MAINTAINER Roran60
 ENV VERSION 1.4.0
 
-WORKDIR /var/www/html
+# WORKDIR /var/www/html
 
 RUN set -ex \
     && apt-get update && apt-get install -y \
@@ -35,11 +35,11 @@ RUN set -ex \
     && a2enmod rewrite
 
 # Create the log file
-RUN touch /var/log/schedule.log
-RUN chmod 0777 /var/log/schedule.log  
+# RUN touch /var/log/schedule.log
+# RUN chmod 0777 /var/log/schedule.log  
 
 # Add crontab file in the cron directory
-ADD scheduler /etc/cron.d/scheduler
+# ADD scheduler /etc/cron.d/scheduler
 
 COPY php.ini /usr/local/etc/php/php.ini
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
