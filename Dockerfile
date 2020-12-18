@@ -47,6 +47,7 @@ COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 VOLUME /var/www/html/data
 
 COPY ./run.sh /
+RUN ["chmod", "+x", "/run.sh"]
 ENTRYPOINT /run.sh
 
 
