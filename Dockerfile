@@ -35,22 +35,19 @@ RUN set -ex \
     && a2enmod rewrite
 
 # Create the log file
-# RUN touch /var/log/schedule.log
-# RUN chmod 0777 /var/log/schedule.log  
+RUN touch /var/log/schedule.log
+RUN chmod 0777 /var/log/schedule.log  
 
 # Add crontab file in the cron directory
-# ADD scheduler /etc/cron.d/scheduler
+ADD scheduler /etc/cron.d/scheduler
 
 COPY php.ini /usr/local/etc/php/php.ini
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 VOLUME /var/www/html/data
 
-# Run the cron
-# RUN crontab /etc/cron.d/scheduler
-
-# CMD ["apache2-foreground"]
-
+COPY ./run.sh /
+ENTRYPOINT /run.sh
 
 
 
