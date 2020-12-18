@@ -3,7 +3,7 @@ FROM php:7.1.9-apache
 MAINTAINER Roran60
 ENV VERSION 1.4.0
 
-WORKDIR /var/www
+WORKDIR /var/www/html
 
 RUN set -ex \
     && apt-get update && apt-get install -y \
@@ -48,8 +48,9 @@ VOLUME /var/www/html/data
 
 # Run the cron
 RUN crontab /etc/cron.d/scheduler
-CMD ["cron", "-f"]
 
+COPY ./run.sh /
+ENTRYPOINT /run.sh
 
 
 
