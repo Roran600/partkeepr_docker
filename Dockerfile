@@ -47,7 +47,7 @@ COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 VOLUME /var/www/html/data
 
 # Run the cron
-RUN crontab /etc/cron.d/scheduler
+# RUN crontab /etc/cron.d/scheduler
 
 CMD ["apache2-foreground"]
 
