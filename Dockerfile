@@ -49,8 +49,7 @@ VOLUME /var/www/html/data
 # Run the cron
 RUN crontab /etc/cron.d/scheduler
 
-COPY ./run.sh /
-ENTRYPOINT /run.sh
+
 
 
 
