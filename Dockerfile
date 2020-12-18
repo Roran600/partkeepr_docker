@@ -49,7 +49,7 @@ VOLUME /var/www/html/data
 # Run the cron
 # RUN crontab /etc/cron.d/scheduler
 
-CMD ["apache2-foreground"]
+# CMD ["apache2-foreground"]
 
 
 
