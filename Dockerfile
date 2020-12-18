@@ -1,4 +1,4 @@
-FROM php:8.0.0-apache-buster
+FROM php:7.1.9-apache
 
 MAINTAINER Roran60
 ENV VERSION 1.4.0
