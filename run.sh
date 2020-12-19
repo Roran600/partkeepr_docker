@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start the first process
-/etc/init.d/apache2 start -k start -D
+/etc/init.d/apache2 start  -D
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start my_first_process: $status"
