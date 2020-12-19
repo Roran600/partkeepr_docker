@@ -9,7 +9,7 @@ if [ $status -ne 0 ]; then
 fi
 
 # Start the second process
-crontab /etc/cron.d/scheduler -D
+crontab /etc/cron.d/scheduler 
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start my_second_process: $status"
