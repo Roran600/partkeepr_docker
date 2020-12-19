@@ -40,6 +40,7 @@ RUN chmod 0777 /var/log/schedule.log
 
 # Add crontab file in the cron directory
 ADD scheduler /etc/cron.d/scheduler
+RUN crontab /etc/cron.d/scheduler
 
 COPY php.ini /usr/local/etc/php/php.ini
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
