@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start the first process
-/usr/sbin/apache2ctl start -D
+/usr/sbin/apache2ctl -k start -D
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start my_first_process: $status"
