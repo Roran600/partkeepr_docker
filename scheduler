@@ -1,0 +1,3 @@
+0 0,6,12,18 * * * (date ; /usr/local/bin/php /var/www/html/app/console partkeepr:cron:run) >> /var/log/schedule.log 2>&1
+#nechat posledný riadok volný inak sa cron nespusti
+

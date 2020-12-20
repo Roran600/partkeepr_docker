@@ -1,16 +1,9 @@
 FROM php:7.1.9-apache
 
-MAINTAINER John Yeary <jyeary@bluelotussoftware.com>
-
+MAINTAINER Roran60
 ENV VERSION 1.4.0
 
-# defaults, overwrite via cli to customize (not used for now)
-ENV PARTKEEPR_DATABASE_HOST database
-ENV PARTKEEPR_DATABASE_NAME partkeepr
-ENV PARTKEEPR_DATABASE_PORT 3306
-ENV PARTKEEPR_DATABASE_USER partkeepr
-ENV PARTKEEPR_DATABASE_PASS partkeepr
-ENV PARTKEEPR_OKTOPART_APIKEY 0123456
+# WORKDIR /var/www/html
 
 RUN set -ex \
     && apt-get update && apt-get install -y \
@@ -41,7 +34,23 @@ RUN set -ex \
     \
     && a2enmod rewrite
 
+# Create the log file
+RUN touch /var/log/schedule.log
+RUN chmod 0777 /var/log/schedule.log  
+
+# Add crontab file in the cron directory
+ADD scheduler /etc/cron.d/scheduler
+RUN crontab /etc/cron.d/scheduler
+
 COPY php.ini /usr/local/etc/php/php.ini
-COPY apache.conf /etc/apache2/sites-available/000-default.conf
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 VOLUME /var/www/html/data
+
+COPY ./run.sh /
+RUN ["chmod", "+x", "/run.sh"]
+ENTRYPOINT /run.sh
+
+
+
+
