@@ -5,7 +5,7 @@ This repository is based on [`mhubig/partkeepr`][0]. The [`bluelotussoftware/par
 * cron
 * nano
 
-> The most recent version is: 1.3.0
+> The most recent version is: 1.4.0
 
 To use it, you need to have a working [docker][3] installation. Start by running
 the following command:
